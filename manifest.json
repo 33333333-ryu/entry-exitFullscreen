@@ -1,13 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Entry-exitFullscreen",
+  "description": "엔트리에서 전체화면 닫기 버튼이 올바르게 작동하지 않는 문제 해결",
   "version": "1.0",
-  "description": "playentry.org에서 전체화면 끄기 버튼이 올바르게 작동하지 않는 문제 해결",
-
+  "permissions": ["scripting"],
+  "host_permissions": ["https://playentry.org/*"],
   "content_scripts": [
     {
       "matches": ["https://playentry.org/*"],
-      "js": ["script.js"]
+      "js": ["script.js"],
+      "run_at": "document_end"
     }
   ]
 }
