@@ -1,17 +1,9 @@
-function minimize() {
-    document.exitFullscreen()
-}
+let wasVisible = !!document.querySelector('.entryEngineButtonMinimize.entryMaximizeButtonMinimize');
 
-const observer = new MutationObserver(() => {
-  const el = document.querySelector(
-    '.css-f39nal .minimize.fsView .entryMaximizeButtonMinimize'
-  );
-
-  if (el) {
-    el.addEventListener('click', () => {
-      minimize()
-    });
+new MutationObserver(() => {
+  const isVisible = !!document.querySelector('.entryEngineButtonMinimize.entryMaximizeButtonMinimize');
+  if (!wasVisible && isVisible) {
+    document.exitFullscreen();
   }
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
+  wasVisible = isVisible;
+}).observe(document.body, { childList: true, subtree: true });
