@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Entry-exitFullscreen",
   "version": "1.0",
-  "description": "playentry.org/project에서 전체화면 끄기 버튼이 올바르게 작동하지 않는 문제 해결",
+  "description": "playentry.org에서 전체화면 끄기 버튼이 올바르게 작동하지 않는 문제 해결",
 
   "content_scripts": [
     {
